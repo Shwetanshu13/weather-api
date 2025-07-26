@@ -164,18 +164,6 @@ export default function Home() {
         {!loading && error && (
           <ErrorMessage error={error} onRetry={handleRetry} />
         )}
-
-        {/* Instructions */}
-        {!hasSearched && !loading && weatherData && (
-          <div className="max-w-4xl mx-auto px-6 mt-8">
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-6 text-center">
-              <p className="text-gray-600">
-                👆 This is sample weather data from Turin, Italy. Search for any
-                city or use your current location to see live weather data!
-              </p>
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Climate Controller 🌤️
 
-## Getting Started
+A beautiful and responsive weather dashboard built with Next.js and Tailwind CSS.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- 🎨 Beautiful, responsive weather cards with gradients
+- 🔍 Search weather by city name
+- 📍 Get weather for current location
+- 🌡️ Detailed weather information including temperature, humidity, wind, and more
+- ⏰ Sunrise and sunset times
+- 🌧️ Precipitation data
+- 💨 Wind speed and direction
+- ☁️ Cloud coverage and visibility
+- 📱 Mobile-friendly design
+
+## Setup
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <repository-url>
+   cd climate-controller
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   pnpm install
+   ```
+
+3. **Set up environment variables**
+
+   - Copy `.env.example` to `.env.local`
+   - Get a free API key from [OpenWeatherMap](https://openweathermap.org/api)
+   - Replace `your_api_key_here` with your actual API key
+
+4. **Run the development server**
+
+   ```bash
+   pnpm dev
+   ```
+
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## API Key Setup
+
+1. Go to [OpenWeatherMap](https://openweathermap.org/api)
+2. Sign up for a free account
+3. Generate an API key
+4. Add it to your `.env.local` file:
+   ```
+   NEXT_PUBLIC_OPENWEATHER_API_KEY=your_actual_api_key_here
+   ```
+
+## Project Structure
+
+```
+├── app/
+│   ├── globals.css      # Global styles
+│   ├── layout.jsx       # Root layout
+│   └── page.jsx         # Main weather page
+├── components/
+│   ├── WeatherCard.jsx      # Main weather display component
+│   ├── LoadingSpinner.jsx   # Loading state component
+│   ├── ErrorMessage.jsx     # Error handling component
+│   ├── LocationSearch.jsx   # City search component
+│   └── WeatherService.js    # API service layer
+└── public/              # Static assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Next.js 15** - React framework
+- **React 19** - UI library
+- **Tailwind CSS 4** - Styling
+- **OpenWeatherMap API** - Weather data
+- **Geolocation API** - Current location detection
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Features in Detail
 
-## Learn More
+### Weather Data Display
 
-To learn more about Next.js, take a look at the following resources:
+- Current temperature with "feels like" temperature
+- Weather condition with icon
+- Min/max temperatures
+- Humidity percentage
+- Wind speed and direction
+- Atmospheric pressure
+- Visibility distance
+- Cloud coverage
+- Sunrise/sunset times
+- Precipitation data (when available)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Location Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Search by city name
+- Auto-detect current location using browser geolocation
+- Display coordinates
 
-## Deploy on Vercel
+### User Experience
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Loading states with spinners
+- Error handling with retry options
+- Responsive design for all screen sizes
+- Beautiful gradient backgrounds
+- Intuitive icons and emojis
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Sample Data
+
+The app initially loads with sample weather data from Turin, Italy to demonstrate the UI. You can search for any city or use your current location to get live weather data.
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).

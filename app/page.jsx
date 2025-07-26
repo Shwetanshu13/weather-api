@@ -68,8 +68,9 @@ export default function Home() {
   // Data from Pompore
   const fetchPomporeWeatherData = async () => {
     try {
-      const response = await WeatherService.getCurrentWeatherByCity("Pompore");
-      setWeatherData(response.data);
+      const response = await WeatherService.getCurrentWeather(34.02, 74.93); // Coordinates for Pompore
+      setWeatherData(response);
+      console.log("Pompore weather data fetched successfully:", response.data);
     } catch (err) {
       console.error("Error fetching Pompore weather data:", err);
       setWeatherData(sampleWeatherData);
